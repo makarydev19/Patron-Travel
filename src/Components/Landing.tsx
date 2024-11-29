@@ -2,6 +2,7 @@ import React from 'react';
 
 const Landing = () => {
   return (
+    // Overlay
     <div className="absolute inset-0 bg-gradient-to-b from-black/90 to-transparent h-3/4">
       {/* Content */}
       <div className="flex flex-col gap-9 justify-start py-40 px-56 h-full">
