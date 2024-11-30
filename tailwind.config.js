@@ -14,6 +14,9 @@ module.exports = {
         'light-gray': '#F7F7F7',
         'half-transparent': 'rgba(0, 0, 0, 0.5)',
       },
+      backgroundImage: {
+        landingCover: "url('./assets/images/cover2.jpg')",
+      },
     },
   },
   plugins: [],

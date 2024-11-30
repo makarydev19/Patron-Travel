@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -18,6 +13,6 @@ body {
   background-color: transparent;
 }
 
-.img {
+/* .img {
   @apply object-cover w-full h-full;
-}
+} */
