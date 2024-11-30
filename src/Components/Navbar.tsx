@@ -8,7 +8,7 @@ const Navbar = () => {
   // Check if the current path is the homepage
   const isHomePage = location.pathname === '/';
   return (
-    <nav className="p-7 w-full absolute top-10 left-1/2 tranform -translate-x-1/2 -translate-y-1/2 z-[1000]">
+    <nav className="p-7 w-full fixed top-10 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[100]">
       <div
         className={`flex justify-around items-center gap-20 ${
           isHomePage ? 'text-white' : 'text-black'
@@ -20,7 +20,7 @@ const Navbar = () => {
           </li>
         </ul>
         <ul className="flex items-center justify-between gap-10">
-          {pageLinks.splice(1).map((link) => (
+          {pageLinks.slice(1).map((link) => (
             <li key={link.path}>
               <Link to={link.path} className="hover:underline">
                 {link.name}
