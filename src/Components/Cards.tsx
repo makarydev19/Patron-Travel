@@ -8,7 +8,7 @@ import 'swiper/css/navigation'; // Import navigation styles
 // Define the type for the props
 interface CardsProps {
   slides: {
-    image: any; // The image URL should be a string
+    image: string;
     title: string;
   }[];
   width?: string; // Custom width
@@ -57,8 +57,14 @@ const Cards: React.FC<CardsProps> = ({
       >
         {slides.map((slide, i) => (
           <SwiperSlide key={i} className="rounded-xl shadow-lg overflow-hidden">
-            <img src={slide.image} alt={slide.title} className="img" />
-            <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center p-4 font-bold">
+            <img
+              src={slide.image}
+              alt={slide.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute w-full h-[80vh] bottom-[-20vh] bg-gradient-to-t from-black/70 to-transparent z-0" />
+
+            <div className="absolute bottom-0 left-0 right-0 text-white text-center p-4 font-bold">
               {slide.title}
             </div>
           </SwiperSlide>

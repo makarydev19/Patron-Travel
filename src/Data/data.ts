@@ -1,4 +1,9 @@
-import card1 from '../assets/images/pexels-basiciggy-9297973.jpg';
+// Destinations Cards Images
+import card1 from '../assets/images/Card1.jpg';
+import card2 from '../assets/images/Card2.jpg';
+import card3 from '../assets/images/Card3.jpg';
+import card4 from '../assets/images/Card4.jpg';
+import card5 from '../assets/images/cover2.jpg';
 
 export interface PageLink {
   name: string;
@@ -52,26 +57,25 @@ export const landingContent: LandingContent[] = [
 ];
 
 // Destinations Cards
-
 export const destinations = [
   {
-    image: { card1 },
-    title: 'City 1',
+    image: card1,
+    title: 'Destination 1',
   },
   {
-    image: 'https://source.unsplash.com/random/800x600?city2',
-    title: 'City 2',
+    image: card2,
+    title: 'Destination 2',
   },
   {
-    image: 'https://source.unsplash.com/random/800x600?city3',
-    title: 'City 3',
+    image: card3,
+    title: 'Destination 3',
   },
   {
-    image: 'https://source.unsplash.com/random/800x600?city4',
-    title: 'City 4',
+    image: card4,
+    title: 'Destination 4',
   },
   {
-    image: 'https://source.unsplash.com/random/800x600?city5',
-    title: 'City 5',
+    image: card5,
+    title: 'Destination 5',
   },
 ];
