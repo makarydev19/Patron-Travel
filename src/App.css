@@ -13,6 +13,6 @@
   background-color: transparent;
 }
 
-/* .img {
+.img {
   @apply object-cover w-full h-full;
-} */
+}
