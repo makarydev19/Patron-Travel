@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div>
       <BrowserRouter>
-        <div className="fixed md:static navbar w-full">
+        <div className="fixed z-[1000] navbar w-full">
           <Navbar />
         </div>
         <div className="flex relative dark:bg-main-dark-bg">

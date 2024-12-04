@@ -1,11 +1,12 @@
 import React from 'react';
-import { Destinations, Landing } from '../Components';
+import { About, Destinations, Landing } from '../Components';
 
 const Home = () => {
   return (
     <>
       <Landing />
       <Destinations />
+      <About />
     </>
   );
 };

@@ -2,58 +2,71 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Navigation } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/effect-coverflow'; // Import styles for Coverflow
-import 'swiper/css/navigation'; // Import navigation styles
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/navigation';
 
-// Define the type for the props
 interface CardsProps {
   slides: {
     image: string;
     title: string;
   }[];
-  width?: string; // Custom width
-  height?: string; // Custom height
-  initialSlide?: number; // Initial slide index
-  slidesPerView?: number | 'auto'; // Number of slides per view
-  effect?: string; // Effect type (e.g., 'coverflow')
-  rotate?: number; // Rotate value for coverflow effect
-  stretch?: number; // Stretch value for coverflow effect
-  depth?: number; // Depth for coverflow effect
-  modifier?: number; // Effect modifier
-  slideShadows?: boolean; // Enable slide shadows
+  initialSlide?: number;
+  effect?: string;
+  rotate?: number;
+  stretch?: number;
+  depth?: number;
+  modifier?: number;
+  slideShadows?: boolean;
 }
 
 const Cards: React.FC<CardsProps> = ({
   slides,
-  width = '80%', // Default width is 80%
-  height = '80%', // Default height is 80%
-  initialSlide = 2, // Default initial slide is 2 (centered)
-  slidesPerView = 'auto', // Default slidesPerView is auto
-  effect = 'coverflow', // Default effect is coverflow
-  rotate = 50, // Default rotate for coverflow effect
-  stretch = 0, // Default stretch for coverflow effect
-  depth = 100, // Default depth for coverflow effect
-  modifier = 1, // Default modifier for coverflow effect
-  slideShadows = true, // Default to show slide shadows
+  initialSlide = 2,
+  effect = 'coverflow',
+  rotate = 50,
+  stretch = 0,
+  depth = 100,
+  modifier = 1,
+  slideShadows = true,
 }) => {
   return (
-    <div className="w-full h-screen flex items-center justify-center">
+    <div className="w-full flex items-center justify-center">
       <Swiper
         effect={effect}
         grabCursor={true}
-        centeredSlides={true} // Ensures the middle card is always centered
-        slidesPerView={slidesPerView}
+        centeredSlides={true}
         initialSlide={initialSlide}
         coverflowEffect={{
-          rotate, // Slide rotate in degrees
-          stretch, // Stretch space between slides in px
-          depth, // Depth offset in px (Z axis)
-          modifier, // Effect multiplier
-          slideShadows, // Enable slide shadows
+          rotate,
+          stretch,
+          depth,
+          modifier,
+          slideShadows,
         }}
         modules={[EffectCoverflow, Navigation]}
-        className="w-full h-full"
-        style={{ width, height }} // Apply custom width and height
+        breakpoints={{
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 15,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          1280: {
+            slidesPerView: 3,
+            spaceBetween: 25,
+          },
+        }}
+        className="
+          w-[100vw] h-[40vh]
+          md:w-[80vw] md:h-[70vh]
+          lg:w-[80vw] lg:h-[70vh]
+        "
       >
         {slides.map((slide, i) => (
           <SwiperSlide key={i} className="rounded-xl shadow-lg overflow-hidden">
@@ -63,7 +76,6 @@ const Cards: React.FC<CardsProps> = ({
               className="w-full h-full object-cover"
             />
             <div className="absolute w-full h-[80vh] bottom-[-20vh] bg-gradient-to-t from-black/70 to-transparent z-0" />
-
             <div className="absolute bottom-0 left-0 right-0 text-white text-center p-4 font-bold">
               {slide.title}
             </div>
